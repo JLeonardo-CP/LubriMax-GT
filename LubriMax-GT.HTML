@@ -1,0 +1,2804 @@
+
+<!DOCTYPE html>
+<html lang="es-GT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LubriMax-GT - Distribuidor Autorizado de Lubricantes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #003366;
+            --secondary: #FFA500;
+            --accent: #E31837;
+            --dark: #222;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color:#36454f;
+        }
+        
+        /* Header Styles */
+        .top-bar {
+            background-color: var(--dark);
+            color: white;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        
+        .top-bar-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-icons a {
+            color: white;
+            margin-left: 10px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary);
+        }
+        
+        header {
+           background: 
+           linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+           url('https://static.vecteezy.com/system/resources/previews/022/862/433/non_2x/sport-car-on-black-background-illustration-ai-generative-free-photo.jpg') no-repeat center center;
+            background-size: 100% auto;
+		   height: 430px;
+		   padding: 30px 0;
+        }
+       
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2px 20px;
+			height: 100%;
+			position: relative;
+			 top: -10px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 140px;
+            width: auto;
+            margin-right: 15px;
+        }
+        
+		.logo {
+            margin-left: -70px; 
+        }
+		
+        .logo-text h1 {
+            color: #FFA500;
+            font-size: 32px;
+            margin-bottom: 5px;
+            text-shadow: 
+            2px 2px 0 #000,
+           -1px -1px 0 #000,
+            1px -1px 0 #000,
+           -1px 1px 0 #000;
+            letter-spacing: 1px;
+        }
+
+        .logo-text p {
+            color: #FFFFFF;
+            font-size: 16px;
+            text-shadow: 
+            1px 1px 0 #000,
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000;
+            font-weight: bold;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--primary);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu > li {
+            position: relative;
+        }
+        
+        .nav-menu > li > a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-menu > li > a:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 220px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+        
+        .nav-menu > li:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .dropdown-menu li a {
+            color: var(--dark);
+            padding: 12px 20px;
+            display: block;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s;
+        }
+        
+        .dropdown-menu li a:hover {
+            background-color: #f5f5f5;
+            color: var(--primary);
+            padding-left: 25px;
+        }
+        
+        .search-cart {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-box {
+            position: relative;
+            margin-right: 20px;
+        }
+        
+        .search-box input {
+            padding: 8px 15px;
+            border-radius: 30px;
+            border: 1px solid #ddd;
+            width: 200px;
+            outline: none;
+            transition: all 0.3s;
+        }
+        
+        .search-box input:focus {
+            border-color: var(--secondary);
+            width: 220px;
+        }
+        
+        .search-box button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+        }
+        
+        .cart-icon {
+		    position: absolute;
+			right: -60px;
+            color: white;
+            font-size: 18px;
+            position: relative;
+            cursor: pointer;
+			top: 210px;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Main Content */
+        .main-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            padding-right: 20px;
+        }
+        
+        .sidebar-menu {
+            list-style: none;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .sidebar-menu li a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--dark);
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s;
+        }
+        
+        .sidebar-menu li a:hover, 
+        .sidebar-menu li a.active {
+            background-color: #f5f5f5;
+            color: var(--primary);
+            padding-left: 25px;
+        }
+        
+        .sidebar-menu li a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* Content Area */
+        .content {
+            flex: 1;
+            padding-left: 20px;
+        }
+        
+        /* Page Styles */
+        .page {
+            display: none;
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        .section-title {
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section-title h2 {
+            color: var(--primary);
+            font-size: 28px;
+        }
+        
+        /* Products */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 1;
+        }
+        
+        .product-img {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-brand {
+            color: var(--gray);
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .product-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            min-height: 50px;
+        }
+        
+        .product-desc {
+            color: var(--gray);
+            font-size: 14px;
+            margin-bottom: 15px;
+            min-height: 60px;
+        }
+        
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .product-viscosity {
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .product-size {
+            color: var(--gray);
+        }
+        
+        .product-price {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .product-price small {
+            font-size: 14px;
+            color: var(--gray);
+            text-decoration: line-through;
+            margin-left: 5px;
+        }
+        
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .btn:hover {
+            background-color: #e69500;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-sm {
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Product Detail */
+        .product-detail {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .product-gallery {
+            flex: 1;
+        }
+        
+        .product-main-image {
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        
+        .product-main-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .product-thumbnails {
+           display: flex;
+           gap: 10px;
+           justify-content: center;
+           flex-wrap: wrap;
+           margin-top: 15px;
+        }
+
+        .product-thumbnail {
+           width: 80px;
+           height: 80px;
+           border: 1px solid #ddd;
+           border-radius: 4px;
+           overflow: hidden;
+           cursor: pointer;
+           transition: all 0.3s;
+        }
+        
+        .product-thumbnail:hover {
+            border-color: var(--secondary);
+        }
+        
+        .product-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-content {
+            flex: 1;
+        }
+        
+        .product-title-large {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .product-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .product-rating .stars {
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+        
+        .product-rating .reviews {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .product-price-large {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .product-meta-large {
+            margin-bottom: 20px;
+        }
+        
+        .product-meta-item {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .product-meta-item strong {
+            width: 120px;
+            color: var(--gray);
+        }
+        
+        .product-description {
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .product-options {
+            margin-bottom: 30px;
+        }
+        
+        .option-group {
+            margin-bottom: 20px;
+        }
+        
+        .option-group h4 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .option-select {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .option-select .btn-sm {
+            background-color: #f5f5f5;
+            color: var(--dark);
+            border: 1px solid #ddd;
+        }
+        
+        .option-select .btn-sm:hover {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .quantity-selector button {
+            width: 40px;
+            height: 40px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        
+        .quantity-selector input {
+            width: 60px;
+            height: 40px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-left: none;
+            border-right: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+        }
+        
+        .footer-col h3 {
+            color: var(--secondary);
+            margin-bottom: 25px;
+            font-size: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: block;
+        }
+		
+		
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .footer-contact li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+		
+		.payment-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .payment-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .payment-methods img {
+            height: 16px;
+            width: auto;
+            max-width: 30px;
+            object-fit: contain;
+            filter: grayscale(30%);
+            opacity: 0.9;
+            transition: all 0.2s ease;
+        }
+
+        .payment-methods span {
+            font-size: 14px;
+            color: #ddd;
+        }
+
+        .payment-item:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .payment-item:hover span {
+            color: var(--secondary); /* Color naranja al hacer hover */
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Cart Preview */
+        .cart-preview {
+            position: absolute;
+            top: 65%;
+            right: -50px;
+            width: 250px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            padding: 10px;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .cart-preview.active {
+            display: block;
+        }
+        
+        .cart-preview h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .cart-items {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+        }
+        
+        .cart-item {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-item-img {
+            width: 30px;
+            height: 30px;
+            margin-right: 15px;
+			font-size: 14px;
+        }
+        
+        .cart-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .cart-item-info {
+            flex: 1;
+        }
+        
+        .cart-item-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-price {
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+        
+        .cart-item-quantity button {
+            width: 25px;
+            height: 25px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+        
+        .cart-item-quantity input {
+            width: 40px;
+            height: 25px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-left: none;
+            border-right: none;
+        }
+		
+		.remove-item {
+           background: none;
+           border: none;
+           color: var(--accent);
+           cursor: pointer;
+           margin-left: 10px;
+          font-size: 14px;
+        }
+
+        .remove-item:hover {
+           color: #c00;
+        }
+        
+        .cart-total {
+           display: flex;
+           justify-content: space-between;
+           font-weight: bold;
+           font-size: 15px;
+           margin-bottom: 10px;
+        }
+        
+        /* Cart Actions - Botones más pequeños */
+        .cart-actions {
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .cart-actions .btn, 
+        .cart-actions .btn-outline {
+            padding: 6px 10px;
+            font-size: 12px;
+            min-width: 0;
+            flex: 1 1 auto;
+        }
+
+        .cart-actions .btn-outline {
+            padding: 5px 10px;
+        }
+        
+        /* Notification */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 4px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            z-index: 10000;
+            animation: slideIn 0.3s ease-out;
+            max-width: 300px;
+        }
+        
+        .notification.fade-out {
+            animation: fadeOut 0.5s ease-out forwards;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes fadeOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .main-container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .content {
+                padding-left: 0;
+            }
+            
+            .product-detail {
+                flex-direction: column;
+            }
+            
+            .cart-preview {
+                width: 300px;
+                right: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .top-bar-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .logo {
+                justify-content: center;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                padding: 15px 20px;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            
+            .nav-menu > li {
+                width: 100%;
+            }
+            
+            .nav-menu > li > a {
+                padding: 12px 0;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                box-shadow: none;
+                width: 100%;
+                display: none;
+            }
+            
+            .dropdown-menu li a {
+                padding-left: 30px;
+            }
+            
+            .nav-menu > li:hover .dropdown-menu {
+                display: block;
+            }
+            
+            .search-cart {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="contact-info">
+                <a href="tel:+50200120021"><i class="fas fa-phone"></i> +502 00120021</a>
+                <a href="mailto:info@lubrimaxgt.com"><i class="fas fa-envelope"></i> info@lubrimaxgt.com</a>
+                <a href="https://wa.me/50200120021"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+            <div class="social-icons">
+                <a href="#facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#youtube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbN2VoR1R8yg2DirZjA5lE4jGRoNE1-dQf4Q&s" alt="LubriMax GT Logo">
+                <div class="logo-text">
+                    <h1>LubriMax-GT</h1>
+                    <p>Distribuidor Autorizado de Lubricantes</p>
+                </div>
+            </div>
+            <div class="search-cart">
+                <div class="cart-icon" onclick="toggleCartPreview()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <div class="cart-preview" id="cartPreview">
+                    <h3>Tu Carrito</h3>
+                    <div class="cart-items" id="cartItems">
+                        <!-- Cart items will be added here dynamically -->
+                    </div>
+                    <div class="cart-total">
+                        <span>Total:</span>
+                        <span id="cartTotal">Q0.00</span>
+                    </div>
+                    <div class="cart-actions">
+                        <a href="#" class="btn btn-outline" onclick="showPage('productos'); hideCartPreview();">Seguir</a>
+                        <button class="btn btn-outline" onclick="clearCart()">Vaciar</button>
+                        <a href="#" class="btn">Pagar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="#" onclick="showPage('inicio')">Inicio</a></li>
+                <li>
+                    <a href="#" onclick="showPage('productos')">Productos <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="showPage('aceites-motor')">Aceites para Motor</a></li>
+                        <li><a href="#" onclick="showPage('aceites-transmision')">Aceites para Transmisión</a></li>
+                        <li><a href="#" onclick="showPage('liquidos-frenos')">Líquidos para Frenos</a></li>
+                        <li><a href="#" onclick="showPage('grasas')">Grasas Lubricantes</a></li>
+                        <li><a href="#" onclick="showPage('aditivos')">Aditivos</a></li>
+                        <li><a href="#" onclick="showPage('filtros')">Filtros</a></li>
+                        <li><a href="#" onclick="showPage('refrigerantes')">Refrigerantes</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" onclick="showPage('marcas')">Marcas</a></li>
+                <li><a href="#" onclick="showPage('nosotros')">Nosotros</a></li>
+                <li><a href="#" onclick="showPage('contacto')">Contacto</a></li>
+                <li><a href="#" onclick="showPage('promociones')">Promociones</a></li>
+                <li><a href="#" onclick="showPage('blog')">Blog Técnico</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="Buscar productos...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <ul class="sidebar-menu">
+                <li><a href="#" onclick="showPage('inicio')" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="#" onclick="showPage('productos')"><i class="fas fa-oil-can"></i> Productos</a></li>
+                <li><a href="#" onclick="showPage('marcas')"><i class="fas fa-tags"></i> Marcas</a></li>
+                <li><a href="#" onclick="showPage('promociones')"><i class="fas fa-percentage"></i> Promociones</a></li>
+                <li><a href="#" onclick="showPage('nosotros')"><i class="fas fa-info-circle"></i> Nosotros</a></li>
+                <li><a href="#" onclick="showPage('contacto')"><i class="fas fa-envelope"></i> Contacto</a></li>
+                <li><a href="#" onclick="showPage('blog')"><i class="fas fa-newspaper"></i> Blog Técnico</a></li>
+            </ul>
+        </div>
+        
+        <!-- Content Area -->
+        <div class="content">
+            <!-- Home Page -->
+            <div id="inicio" class="page active">
+                <div class="section-title">
+                    <h2>Productos Destacados</h2>
+                </div>
+                
+                <div class="products">
+                    <div class="product-card">
+                        <span class="product-badge">Más Vendido</span>
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/61BIcUjiKkL._UF350,350_QL80_.jpg" alt="Mobil 1 5W-30">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Mobil 1</div>
+                            <div class="product-title">Aceite Sintético Mobil 1 5W-30</div>
+                            <div class="product-desc">Aceite de motor totalmente sintético diseñado para proporcionar un rendimiento excepcional del motor y protección contra el desgaste.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">5W-30</span>
+                                <span class="product-size">1 Litro</span>
+                            </div>
+                            <div class="product-price">Q125.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('mobil1-5w30')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('mobil1-5w30')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://ferreteriavidri.com/images/items/large/175003.jpg" alt="Castrol EDGE 5W-30">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Castrol</div>
+                            <div class="product-title">Aceite Sintético Castrol EDGE 5W-30</div>
+                            <div class="product-desc">Tecnología Fluid TITANIUM que se adapta a las condiciones extremas del motor, reduciendo la fricción y mejorando el rendimiento.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">5W-30</span>
+                                <span class="product-size">4 Litros</span>
+                            </div>
+                            <div class="product-price">Q480.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('castrol-edge-5w30')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('castrol-edge-5w30')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <span class="product-badge">Oferta</span>
+                        <div class="product-img">
+                            <img src="https://www.shell.cl/motorists/lubricants-for-cars/helix-ultra/_jcr_content/root/metadata.shellimg.jpeg/1725358800414/shell-helix-ultra-5w-30-packshot.jpeg" alt="Shell Helix Ultra 5W-30">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Shell</div>
+                            <div class="product-title">Aceite Shell Helix Ultra 5W-30</div>
+                            <div class="product-desc">Aceite totalmente sintético con tecnología PurePlus que ofrece una protección superior contra el desgaste y mantiene el motor limpio.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">5W-30</span>
+                                <span class="product-size">5 Litros</span>
+                            </div>
+                            <div class="product-price">Q550.00 <small>Q620.00</small></div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('shell-helix-5w30')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('shell-helix-5w30')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/61p1MZ7H7IL._AC_SY550_.jpg" alt="Valvoline 15W-40">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Valvoline</div>
+                            <div class="product-title">Aceite Valvoline Premium Blue 15W-40</div>
+                            <div class="product-desc">Aceite para motores diésel pesados que proporciona una protección excepcional contra el desgaste y el consumo de aceite.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">15W-40</span>
+                                <span class="product-size">1 Galón</span>
+                            </div>
+                            <div class="product-price">Q320.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('valvoline-premium-15w40')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('valvoline-premium-15w40')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- All Products Page -->
+            <div id="productos" class="page">
+                <div class="section-title">
+                    <h2>Todos Nuestros Productos</h2>
+                </div>
+                <p>Explora nuestra amplia gama de lubricantes y productos para el cuidado de tu vehículo.</p>
+                
+                <div class="products">
+                    <!-- Motor Oils -->
+                    <div class="product-card">
+                        <span class="product-badge">Más Vendido</span>
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/61BIcUjiKkL._UF350,350_QL80_.jpg" alt="Mobil 1 5W-30">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Mobil 1</div>
+                            <div class="product-title">Aceite Sintético Mobil 1 5W-30</div>
+                            <div class="product-desc">Aceite de motor totalmente sintético diseñado para proporcionar un rendimiento excepcional del motor y protección contra el desgaste.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">5W-30</span>
+                                <span class="product-size">1 Litro</span>
+                            </div>
+                            <div class="product-price">Q125.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('mobil1-5w30')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('mobil1-5w30')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://ferreteriavidri.com/images/items/large/175003.jpg" alt="Castrol EDGE 5W-30">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Castrol</div>
+                            <div class="product-title">Aceite Sintético Castrol EDGE 5W-30</div>
+                            <div class="product-desc">Tecnología Fluid TITANIUM que se adapta a las condiciones extremas del motor, reduciendo la fricción y mejorando el rendimiento.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">5W-30</span>
+                                <span class="product-size">4 Litros</span>
+                            </div>
+                            <div class="product-price">Q480.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('castrol-edge-5w30')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('castrol-edge-5w30')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <span class="product-badge">Oferta</span>
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/91FRpbCEwML._AC_SL1500_.jpg" alt="Shell Helix Ultra 5W-30">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Shell</div>
+                            <div class="product-title">Aceite Shell Helix Ultra 5W-30</div>
+                            <div class="product-desc">Aceite totalmente sintético con tecnología PurePlus que ofrece una protección superior contra el desgaste y mantiene el motor limpio.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">5W-30</span>
+                                <span class="product-size">5 Litros</span>
+                            </div>
+                            <div class="product-price">Q550.00 <small>Q620.00</small></div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('shell-helix-5w30')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('shell-helix-5w30')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/61p1MZ7H7IL._AC_SY550_.jpg" alt="Valvoline 15W-40">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Valvoline</div>
+                            <div class="product-title">Aceite Valvoline Premium Blue 15W-40</div>
+                            <div class="product-desc">Aceite para motores diésel pesados que proporciona una protección excepcional contra el desgaste y el consumo de aceite.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">15W-40</span>
+                                <span class="product-size">1 Galón</span>
+                            </div>
+                            <div class="product-price">Q320.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('valvoline-premium-15w40')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('valvoline-premium-15w40')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/61H+lGsQfbL._AC_SL1500_.jpg" alt="Mobil 1 0W-20">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Mobil 1</div>
+                            <div class="product-title">Aceite Mobil 1 0W-20 Advanced Full Synthetic</div>
+                            <div class="product-desc">Aceite de motor totalmente sintético con tecnología avanzada para máxima protección y rendimiento.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">0W-20</span>
+                                <span class="product-size">5 Litros</span>
+                            </div>
+                            <div class="product-price">Q690.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('mobil1-0w20')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('mobil1-0w20')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/71Y0CAowaaL._AC_SX425_PIbundle-3,TopRight,0,0_SH20_.jpg" alt="Castrol Magnatec 5W-30">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Castrol</div>
+                            <div class="product-title">Aceite Castrol MAGNATEC 5W-30</div>
+                            <div class="product-desc">Protección inteligente que se adhiere a las partes críticas del motor para una lubricación instantánea al arranque.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">5W-30</span>
+                                <span class="product-size">4 Litros</span>
+                            </div>
+                            <div class="product-price">Q450.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('castrol-magnatec-5w30')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('castrol-magnatec-5w30')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Transmission Oils -->
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/71eI25kbpwL._AC_SX425_.jpg" alt="Mobil ATF 3309">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Mobil</div>
+                            <div class="product-title">Aceite para Transmisión Mobil ATF 3309</div>
+                            <div class="product-desc">Aceite para transmisiones automáticas que proporciona un rendimiento suave y protección contra el desgaste.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">ATF 3309</span>
+                                <span class="product-size">1 Litro</span>
+                            </div>
+                            <div class="product-price">Q180.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('mobil-atf-3309')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('mobil-atf-3309')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/61h2QjHT98L._AC_SX425_.jpg" alt="Castrol Transmax">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Castrol</div>
+                            <div class="product-title">Aceite para Transmisión Castrol Transmax</div>
+                            <div class="product-desc">Protección superior para transmisiones automáticas en condiciones extremas de conducción.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">Multi-Vehicle</span>
+                                <span class="product-size">1 Litro</span>
+                            </div>
+                            <div class="product-price">Q200.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('castrol-transmax')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('castrol-transmax')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Brake Fluids -->
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/71L0ed1AHKL._AC_SY879_.jpg" alt="DOT 4 Brake Fluid">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Valvoline</div>
+                            <div class="product-title">Líquido para Frenos DOT 4</div>
+                            <div class="product-desc">Alto punto de ebullición para un rendimiento confiable en condiciones de frenado exigentes.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">DOT 4</span>
+                                <span class="product-size">500 ml</span>
+                            </div>
+                            <div class="product-price">Q95.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('valvoline-dot4')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('valvoline-dot4')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Greases -->
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/510ZHSfElsL._SX466_.jpg" alt="Mobilgrease XHP 222">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Mobil</div>
+                            <div class="product-title">Grasa Mobilgrease XHP 222</div>
+                            <div class="product-desc">Grasa de litio complejo de alto rendimiento para aplicaciones industriales y automotrices.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">NLGI 2</span>
+                                <span class="product-size">400 g</span>
+                            </div>
+                            <div class="product-price">Q150.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('mobilgrease-xhp222')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('mobilgrease-xhp222')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additives -->
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://cdnx.jumpseller.com/ipacor/image/52736939/resize/470/645?1725726380" alt="Liqui Moly MoS2">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Liqui Moly</div>
+                            <div class="product-title">Aditivo MoS2</div>
+                            <div class="product-desc">Aditivo con partículas de molibdeno para reducir la fricción y el desgaste en el motor.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">300 ml</span>
+                                <span class="product-size">Botella</span>
+                            </div>
+                            <div class="product-price">Q220.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('liqui-moly-mos2')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('liqui-moly-mos2')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Filters -->
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/71YPzG8QsGL._AC_SY450_.jpg" alt="Filtro de Aceite Mann">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Mann-Filter</div>
+                            <div class="product-title">Filtro de Aceite W 914/2</div>
+                            <div class="product-desc">Filtro de aceite de alta calidad para diversos modelos de vehículos europeos.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">Universal</span>
+                                <span class="product-size">1 Unidad</span>
+                            </div>
+                            <div class="product-price">Q120.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('mann-filter-w9142')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('mann-filter-w9142')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Coolants -->
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/71ya2qPU0CL._AC_SX425_PIbundle-6,TopRight,0,0_SH20_.jpg" alt="Prestone Antifreeze">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Prestone</div>
+                            <div class="product-title">Anticongelante/Refrigerante</div>
+                            <div class="product-desc">Protección todo el año para el sistema de enfriamiento de tu vehículo.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">50/50</span>
+                                <span class="product-size">1 Galón</span>
+                            </div>
+                            <div class="product-price">Q180.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('prestone-antifreeze')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('prestone-antifreeze')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Motor Oils Page -->
+            <div id="aceites-motor" class="page">
+                <div class="section-title">
+                    <h2>Aceites para Motor</h2>
+                </div>
+                <p>Los mejores aceites para el cuidado y mantenimiento de tu motor.</p>
+                
+                <div class="products">
+                    <div class="product-card">
+                        <span class="product-badge">Más Vendido</span>
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/61BIcUjiKkL._UF350,350_QL80_.jpg" alt="Mobil 1 5W-30">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Mobil 1</div>
+                            <div class="product-title">Aceite Sintético Mobil 1 5W-30</div>
+                            <div class="product-desc">Aceite de motor totalmente sintético diseñado para proporcionar un rendimiento excepcional del motor y protección contra el desgaste.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">5W-30</span>
+                                <span class="product-size">1 Litro</span>
+                            </div>
+                            <div class="product-price">Q125.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('mobil1-5w30')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('mobil1-5w30')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://ferreteriavidri.com/images/items/large/175003.jpg" alt="Castrol EDGE 5W-30">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Castrol</div>
+                            <div class="product-title">Aceite Sintético Castrol EDGE 5W-30</div>
+                            <div class="product-desc">Tecnología Fluid TITANIUM que se adapta a las condiciones extremas del motor, reduciendo la fricción y mejorando el rendimiento.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">5W-30</span>
+                                <span class="product-size">4 Litros</span>
+                            </div>
+                            <div class="product-price">Q480.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('castrol-edge-5w30')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('castrol-edge-5w30')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <span class="product-badge">Oferta</span>
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/91FRpbCEwML._AC_SL1500_.jpg" alt="Shell Helix Ultra 5W-30">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Shell</div>
+                            <div class="product-title">Aceite Shell Helix Ultra 5W-30</div>
+                            <div class="product-desc">Aceite totalmente sintético con tecnología PurePlus que ofrece una protección superior contra el desgaste y mantiene el motor limpio.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">5W-30</span>
+                                <span class="product-size">5 Litros</span>
+                            </div>
+                            <div class="product-price">Q550.00 <small>Q620.00</small></div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('shell-helix-5w30')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('shell-helix-5w30')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/61p1MZ7H7IL._AC_SY550_.jpg" alt="Valvoline 15W-40">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Valvoline</div>
+                            <div class="product-title">Aceite Valvoline Premium Blue 15W-40</div>
+                            <div class="product-desc">Aceite para motores diésel pesados que proporciona una protección excepcional contra el desgaste y el consumo de aceite.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">15W-40</span>
+                                <span class="product-size">1 Galón</span>
+                            </div>
+                            <div class="product-price">Q320.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('valvoline-premium-15w40')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('valvoline-premium-15w40')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/61H+lGsQfbL._AC_SL1500_.jpg" alt="Mobil 1 0W-20">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Mobil 1</div>
+                            <div class="product-title">Aceite Mobil 1 0W-20 Advanced Full Synthetic</div>
+                            <div class="product-desc">Aceite de motor totalmente sintético con tecnología avanzada para máxima protección y rendimiento.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">0W-20</span>
+                                <span class="product-size">5 Litros</span>
+                            </div>
+                            <div class="product-price">Q690.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('mobil1-0w20')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('mobil1-0w20')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/71Y0CAowaaL._AC_SX425_PIbundle-3,TopRight,0,0_SH20_.jpg" alt="Castrol Magnatec 5W-30">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Castrol</div>
+                            <div class="product-title">Aceite Castrol MAGNATEC 5W-30</div>
+                            <div class="product-desc">Protección inteligente que se adhiere a las partes críticas del motor para una lubricación instantánea al arranque.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">5W-30</span>
+                                <span class="product-size">4 Litros</span>
+                            </div>
+                            <div class="product-price">Q450.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('castrol-magnatec-5w30')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('castrol-magnatec-5w30')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Transmission Oils Page -->
+            <div id="aceites-transmision" class="page">
+                <div class="section-title">
+                    <h2>Aceites para Transmisión</h2>
+                </div>
+                <p>Aceites especializados para el cuidado de tu transmisión automática o manual.</p>
+                
+                <div class="products">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/71eI25kbpwL._AC_SX425_.jpg" alt="Mobil ATF 3309">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Mobil</div>
+                            <div class="product-title">Aceite para Transmisión Mobil ATF 3309</div>
+                            <div class="product-desc">Aceite para transmisiones automáticas que proporciona un rendimiento suave y protección contra el desgaste.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">ATF 3309</span>
+                                <span class="product-size">1 Litro</span>
+                            </div>
+                            <div class="product-price">Q180.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('mobil-atf-3309')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('mobil-atf-3309')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/61h2QjHT98L._AC_SX425_.jpg" alt="Castrol Transmax">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Castrol</div>
+                            <div class="product-title">Aceite para Transmisión Castrol Transmax</div>
+                            <div class="product-desc">Protección superior para transmisiones automáticas en condiciones extremas de conducción.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">Multi-Vehicle</span>
+                                <span class="product-size">1 Litro</span>
+                            </div>
+                            <div class="product-price">Q200.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('castrol-transmax')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('castrol-transmax')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/71YH-yGatwL._AC_SY879_.jpg" alt="Valvoline MaxLife">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Valvoline</div>
+                            <div class="product-title">Aceite para Transmisión Valvoline MaxLife</div>
+                            <div class="product-desc">Formulado para vehículos con alto kilometraje, ayuda a reducir fugas y mantener sellos flexibles.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">ATF</span>
+                                <span class="product-size">1 Litro</span>
+                            </div>
+                            <div class="product-price">Q190.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="addToCart('valvoline-maxlife')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Brake Fluids Page -->
+            <div id="liquidos-frenos" class="page">
+                <div class="section-title">
+                    <h2>Líquidos para Frenos</h2>
+                </div>
+                <p>Líquidos de alta calidad para garantizar un frenado seguro y eficiente.</p>
+                
+                <div class="products">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/71L0ed1AHKL._AC_SY879_.jpg" alt="DOT 4 Brake Fluid">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Valvoline</div>
+                            <div class="product-title">Líquido para Frenos DOT 4</div>
+                            <div class="product-desc">Alto punto de ebullición para un rendimiento confiable en condiciones de frenado exigentes.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">DOT 4</span>
+                                <span class="product-size">500 ml</span>
+                            </div>
+                            <div class="product-price">Q95.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('valvoline-dot4')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('valvoline-dot4')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://liquimoly.cloudimg.io/v7/https://www.liqui-moly.com/media/catalog/product/cache/7c4066dd86a6b9217681a7aaaa67e822/4/5/4515436052f6752ed857df8056bbcbffef6b11de_3090_Bremsfl__ssigkeit_DOT_3_250ml_69ae.png?w=365&h=360&func=bound&sharp=1&org_if_sml=1&force_format=webp%252Coriginal" alt="DOT 3 Brake Fluid">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Castrol</div>
+                            <div class="product-title">Líquido para Frenos DOT 3</div>
+                            <div class="product-desc">Protección contra la corrosión y rendimiento confiable en sistemas de frenos convencionales.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">DOT 3</span>
+                                <span class="product-size">500 ml</span>
+                            </div>
+                            <div class="product-price">Q85.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="addToCart('castrol-dot3')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Greases Page -->
+            <div id="grasas" class="page">
+                <div class="section-title">
+                    <h2>Grasas Lubricantes</h2>
+                </div>
+                <p>Grasas especializadas para diversas aplicaciones automotrices e industriales.</p>
+                
+                <div class="products">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/510ZHSfElsL._SX466_.jpg" alt="Mobilgrease XHP 222">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Mobil</div>
+                            <div class="product-title">Grasa Mobilgrease XHP 222</div>
+                            <div class="product-desc">Grasa de litio complejo de alto rendimiento para aplicaciones industriales y automotrices.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">NLGI 2</span>
+                                <span class="product-size">400 g</span>
+                            </div>
+                            <div class="product-price">Q150.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('mobilgrease-xhp222')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('mobilgrease-xhp222')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://http2.mlstatic.com/D_NQ_NP_936136-MLA44517737157_012021-O.webp" alt="Shell Gadus S2 V100">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Shell</div>
+                            <div class="product-title">Grasa Shell Gadus S2 V100</div>
+                            <div class="product-desc">Grasa de litio complejo con aditivos EP para una protección superior contra el desgaste.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">NLGI 2</span>
+                                <span class="product-size">400 g</span>
+                            </div>
+                            <div class="product-price">Q140.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="addToCart('shell-gadus-s2')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additives Page -->
+            <div id="aditivos" class="page">
+                <div class="section-title">
+                    <h2>Aditivos</h2>
+                </div>
+                <p>Mejora el rendimiento y prolonga la vida útil de tu motor con nuestros aditivos.</p>
+                
+                <div class="products">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://cdnx.jumpseller.com/ipacor/image/52736939/resize/470/645?1725726380" alt="Liqui Moly MoS2">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Liqui Moly</div>
+                            <div class="product-title">Aditivo MoS2</div>
+                            <div class="product-desc">Aditivo con partículas de molibdeno para reducir la fricción y el desgaste en el motor.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">300 ml</span>
+                                <span class="product-size">Botella</span>
+                            </div>
+                            <div class="product-price">Q220.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('liqui-moly-mos2')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('liqui-moly-mos2')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/81snHE572YL._AC_SY450_.jpg" alt="STP Oil Treatment">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">STP</div>
+                            <div class="product-title">Tratamiento para Aceite</div>
+                            <div class="product-desc">Mejora la viscosidad del aceite y reduce el desgaste del motor en condiciones extremas.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">300 ml</span>
+                                <span class="product-size">Botella</span>
+                            </div>
+                            <div class="product-price">Q180.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="addToCart('stp-oil-treatment')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Filters Page -->
+            <div id="filtros" class="page">
+                <div class="section-title">
+                    <h2>Filtros</h2>
+                </div>
+                <p>Filtros de alta calidad para mantener tu motor limpio y funcionando de manera óptima.</p>
+                
+                <div class="products">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/71YPzG8QsGL._AC_SY450_.jpg" alt="Filtro de Aceite Mann">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Mann-Filter</div>
+                            <div class="product-title">Filtro de Aceite W 914/2</div>
+                            <div class="product-desc">Filtro de aceite de alta calidad para diversos modelos de vehículos europeos.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">Universal</span>
+                                <span class="product-size">1 Unidad</span>
+                            </div>
+                            <div class="product-price">Q120.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('mann-filter-w9142')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('mann-filter-w9142')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/81UMimDSu1L._AC_SX425_.jpg" alt="Filtro de Aire Bosch">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Bosch</div>
+                            <div class="product-title">Filtro de Aire</div>
+                            <div class="product-desc">Proporciona aire limpio al motor para un rendimiento óptimo y eficiencia de combustible.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">Universal</span>
+                                <span class="product-size">1 Unidad</span>
+                            </div>
+                            <div class="product-price">Q150.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="addToCart('bosch-air-filter')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Coolants Page -->
+            <div id="refrigerantes" class="page">
+                <div class="section-title">
+                    <h2>Refrigerantes</h2>
+                </div>
+                <p>Mantén tu sistema de enfriamiento en óptimas condiciones con nuestros refrigerantes.</p>
+                
+                <div class="products">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/71ya2qPU0CL._AC_SL1500_.jpg" alt="Prestone Antifreeze">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Prestone</div>
+                            <div class="product-title">Anticongelante/Refrigerante</div>
+                            <div class="product-desc">Protección todo el año para el sistema de enfriamiento de tu vehículo.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">50/50</span>
+                                <span class="product-size">1 Galón</span>
+                            </div>
+                            <div class="product-price">Q180.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('prestone-antifreeze')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('prestone-antifreeze')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/810scqyTa1L._AC_SY450_.jpg" alt="Zerex G-05">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Zerex</div>
+                            <div class="product-title">Refrigerante G-05</div>
+                            <div class="product-desc">Formulado para vehículos que requieren tecnología de inhibidores de silicatos orgánicos.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">50/50</span>
+                                <span class="product-size">1 Galón</span>
+                            </div>
+                            <div class="product-price">Q200.00</div>
+                            <div class="product-actions">
+                                <a href="#" onclick="addToCart('zerex-g05')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Detail Page -->
+            <div id="product-detail" class="page">
+                <div class="product-detail">
+                    <div class="product-gallery">
+                        <div class="product-main-image">
+                            <img id="main-product-image" src="" alt="Product Image">
+                        </div>
+                        <div class="product-thumbnails">
+                            <!-- Thumbnails will be added here dynamically -->
+                        </div>
+                    </div>
+                    
+                    <div class="product-content">
+                        <button class="btn btn-outline" onclick="showPage(currentPageBeforeDetail)" style="margin-bottom: 20px;">
+                            <i class="fas fa-arrow-left"></i> Volver
+                        </button>
+                        
+                        <h1 class="product-title-large" id="detail-product-title">Product Title</h1>
+                        
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="reviews">(24 reseñas)</div>
+                        </div>
+                        
+                        <div class="product-price-large" id="detail-product-price">Q0.00</div>
+                        
+                        <div class="product-meta-large">
+                            <div class="product-meta-item">
+                                <strong>Marca:</strong>
+                                <span id="detail-product-brand">Brand</span>
+                            </div>
+                            <div class="product-meta-item">
+                                <strong>Viscosidad:</strong>
+                                <span id="detail-product-viscosity">0W-0</span>
+                            </div>
+                            <div class="product-meta-item">
+                                <strong>Tamaño:</strong>
+                                <span id="detail-product-size">0 Litros</span>
+                            </div>
+                            <div class="product-meta-item">
+                                <strong>Disponibilidad:</strong>
+                                <span style="color: green;">En stock (25+ unidades)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="product-description" id="detail-product-description">
+                            Product description goes here with full details about specifications and benefits.
+                        </div>
+                        
+                        <div class="quantity-selector">
+                            <button onclick="decreaseQuantity()">-</button>
+                            <input type="text" value="1" id="product-quantity">
+                            <button onclick="increaseQuantity()">+</button>
+                        </div>
+                        
+                        <button class="btn" style="width: 100%; margin-bottom: 15px;" onclick="addToCartFromDetail()">Agregar al Carrito</button>
+                        <button class="btn btn-outline" style="width: 100%;" onclick="showPage(currentPageBeforeDetail)">Volver</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Brands Page -->
+            <div id="marcas" class="page">
+                <div class="section-title">
+                    <h2>Marcas que Distribuimos</h2>
+                </div>
+                <p>Contamos con las mejores marcas de lubricantes a nivel mundial.</p>
+                
+                <div class="products">
+                    <div class="product-card" style="text-align: center; padding: 30px;">
+                        <img src="https://img.zsmotor.cl/wp-content/uploads/2024/06/Logo-mobil-2.png" alt="Mobil" style="max-height: 100px; margin-bottom: 20px;">
+                        <h3>Mobil</h3>
+                        <p>Líder mundial en lubricantes de alto rendimiento</p>
+                    </div>
+                    
+                    <div class="product-card" style="text-align: center; padding: 30px;">
+                        <img src="https://revistacentrozaragoza.com/wp-content/uploads/2023/02/Diseno-sin-titulo-2023-02-28T101859.747.jpg" alt="Castrol" style="max-height: 100px; margin-bottom: 20px;">
+                        <h3>Castrol</h3>
+                        <p>Tecnología avanzada para la protección de motores</p>
+                    </div>
+                    
+                    <div class="product-card" style="text-align: center; padding: 30px;">
+                        <img src="https://i.pinimg.com/736x/f2/1d/81/f21d81de16056d0829dd3082a12eb776.jpg" alt="Shell" style="max-height: 100px; margin-bottom: 20px;">
+                        <h3>Shell</h3>
+                        <p>Innovación en lubricantes desde 1907</p>
+                    </div>
+                    
+                    <div class="product-card" style="text-align: center; padding: 30px;">
+                        <img src="https://images.seeklogo.com/logo-png/17/3/valvoline-logo-png_seeklogo-177149.png" alt="Valvoline" style="max-height: 100px; margin-bottom: 20px;">
+                        <h3>Valvoline</h3>
+                        <p>Protección superior para motores desde 1866</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- About Us Page -->
+            <div id="nosotros" class="page">
+                <div class="section-title">
+                    <h2>Sobre Nosotros</h2>
+                </div>
+                
+                <div style="display: flex; gap: 30px; margin-bottom: 40px;">
+                    <div style="flex: 1;">
+                        <h3 style="color: var(--primary); margin-bottom: 15px;">Nuestra Historia</h3>
+                        <p>LubriMax GT nació en 2010 con la misión de proveer lubricantes de la más alta calidad a precios competitivos en el mercado guatemalteco. Desde entonces, hemos crecido hasta convertirnos en uno de los distribuidores autorizados más confiables del país.</p>
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="color: var(--primary); margin-bottom: 15px;">Nuestra Misión</h3>
+                        <p>Proporcionar productos de calidad que protejan y optimicen el rendimiento de los vehículos de nuestros clientes, ofreciendo un servicio excepcional y asesoría técnica especializada.</p>
+                    </div>
+                </div>
+                
+                <div style="background-color: #f9f9f9; padding: 30px; border-radius: 8px;">
+                    <h3 style="color: var(--primary); margin-bottom: 15px;">¿Por qué elegirnos?</h3>
+                    <ul style="list-style-type: none;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--secondary); margin-right: 10px;"></i> Distribuidores autorizados de las mejores marcas</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--secondary); margin-right: 10px;"></i> Productos 100% originales con garantía</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--secondary); margin-right: 10px;"></i> Asesoría técnica especializada</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--secondary); margin-right: 10px;"></i> Precios competitivos en el mercado</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--secondary); margin-right: 10px;"></i> Entrega rápida y servicio confiable</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Contact Page -->
+            <div id="contacto" class="page">
+                <div class="section-title">
+                    <h2>Contacto</h2>
+                </div>
+                
+                <div style="display: flex; gap: 30px; margin-bottom: 40px;">
+                    <div style="flex: 1;">
+                        <h3 style="color: var(--primary); margin-bottom: 15px;">Información de Contacto</h3>
+                        <div style="margin-bottom: 20px;">
+                            <p><i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-right: 10px;"></i> Calzada Roosevelt 25-65, Zona 11, Ciudad de Guatemala</p>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <p><i class="fas fa-phone-alt" style="color: var(--secondary); margin-right: 10px;"></i> <a href="tel:+50200120021">+502 00120021</a></p>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <p><i class="fas fa-envelope" style="color: var(--secondary); margin-right: 10px;"></i> <a href="mailto:info@lubrimaxgt.com">info@lubrimaxgt.com</a></p>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <p><i class="fab fa-whatsapp" style="color: var(--secondary); margin-right: 10px;"></i> <a href="https://wa.me/50200120021">+502 00120021</a></p>
+                        </div>
+                        
+                        <h3 style="color: var(--primary); margin-bottom: 15px; margin-top: 30px;">Horario de Atención</h3>
+                        <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+                        <p>Sábados: 9:00 AM - 1:00 PM</p>
+                    </div>
+                    
+                    <div style="flex: 1;">
+                        <h3 style="color: var(--primary); margin-bottom: 15px;">Envíanos un Mensaje</h3>
+                        <form style="display: grid; gap: 15px;">
+                            <div>
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Nombre</label>
+                                <input type="text" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Correo Electrónico</label>
+                                <input type="email" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Teléfono</label>
+                                <input type="tel" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Mensaje</label>
+                                <textarea style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; min-height: 100px;"></textarea>
+                            </div>
+                            <button type="submit" class="btn">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 15px;">Ubicación</h3>
+                    <div style="height: 300px; background-color: #f5f5f5; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                        <p>Mapa de ubicación iría aquí</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Promotions Page -->
+            <div id="promociones" class="page">
+                <div class="section-title">
+                    <h2>Promociones</h2>
+                </div>
+                
+                <div class="products">
+                    <div class="product-card">
+                        <span class="product-badge">Oferta</span>
+                        <div class="product-img">
+                            <img src="https://m.media-amazon.com/images/I/91FRpbCEwML._AC_SL1500_.jpg" alt="Shell Helix Ultra 5W-30">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Shell</div>
+                            <div class="product-title">Aceite Shell Helix Ultra 5W-30</div>
+                            <div class="product-desc">Aceite totalmente sintético con tecnología PurePlus que ofrece una protección superior contra el desgaste y mantiene el motor limpio.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">5W-30</span>
+                                <span class="product-size">5 Litros</span>
+                            </div>
+                            <div class="product-price">Q550.00 <small>Q620.00</small></div>
+                            <div class="product-actions">
+                                <a href="#" onclick="showProductDetail('shell-helix-5w30')" class="btn btn-sm btn-outline">Detalles</a>
+                                <a href="#" onclick="addToCart('shell-helix-5w30')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <span class="product-badge">Combo</span>
+                        <div class="product-img">
+                            <img src="https://http2.mlstatic.com/D_NQ_NP_912188-MLV86623904621_062025-O.webp" alt="Combo Mobil 1">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Mobil 1</div>
+                            <div class="product-title">Combo Aceite + Filtro</div>
+                            <div class="product-desc">Aceite sintético Mobil 1 5W-30 + Filtro de aceite compatible. Ahorra al comprar el combo.</div>
+                            <div class="product-meta">
+                                <span class="product-viscosity">5W-30</span>
+                                <span class="product-size">Combo</span>
+                            </div>
+                            <div class="product-price">Q300.00 <small>Q350.00</small></div>
+                            <div class="product-actions">
+                                <a href="#" onclick="addToCart('combo-mobil1')" class="btn btn-sm">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Blog Page -->
+            <div id="blog" class="page">
+                <div class="section-title">
+                    <h2>Blog Técnico</h2>
+                </div>
+                
+                <div style="display: grid; gap: 30px;">
+                    <div style="background-color: #f9f9f9; padding: 30px; border-radius: 8px;">
+                        <h3 style="color: var(--primary); margin-bottom: 15px;">¿Cómo elegir el aceite adecuado para tu vehículo?</h3>
+                        <p style="margin-bottom: 15px;">Publicado el 15 de Octubre, 2023</p>
+                        <p style="margin-bottom: 20px;">Elegir el aceite correcto para tu vehículo es crucial para mantener el motor en óptimas condiciones. Factores como la viscosidad, especificaciones del fabricante y condiciones de manejo deben ser considerados...</p>
+                        <a href="#" style="color: var(--secondary); font-weight: bold;">Leer más</a>
+                    </div>
+                    
+                    <div style="background-color: #f9f9f9; padding: 30px; border-radius: 8px;">
+                        <h3 style="color: var(--primary); margin-bottom: 15px;">La importancia de cambiar el aceite a tiempo</h3>
+                        <p style="margin-bottom: 15px;">Publicado el 5 de Septiembre, 2023</p>
+                        <p style="margin-bottom: 20px;">El cambio de aceite es uno de los mantenimientos más importantes para prolongar la vida útil de tu motor. Descubre por qué no debes posponer este servicio y cómo afecta a tu vehículo...</p>
+                        <a href="#" style="color: var(--secondary); font-weight: bold;">Leer más</a>
+                    </div>
+                    
+                    <div style="background-color: #f9f9f9; padding: 30px; border-radius: 8px;">
+                        <h3 style="color: var(--primary); margin-bottom: 15px;">Diferencias entre aceites sintéticos y convencionales</h3>
+                        <p style="margin-bottom: 15px;">Publicado el 20 de Agosto, 2023</p>
+                        <p style="margin-bottom: 20px;">¿Vale la pena pagar más por un aceite sintético? Analizamos las diferencias clave entre estos tipos de lubricantes y te ayudamos a decidir cuál es el mejor para tu vehículo...</p>
+                        <a href="#" style="color: var(--secondary); font-weight: bold;">Leer más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>LubriMax GT</h3>
+                <p>Distribuidor autorizado de lubricantes en Guatemala. Productos de calidad para el cuidado de tu vehículo.</p>
+                <div class="social-links">
+                    <a href="#facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="#whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Productos</h3>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="showPage('aceites-motor')">Aceites para Motor</a></li>
+                    <li><a href="#" onclick="showPage('aceites-transmision')">Aceites para Transmisión</a></li>
+                    <li><a href="#" onclick="showPage('liquidos-frenos')">Líquidos para Frenos</a></li>
+                    <li><a href="#" onclick="showPage('grasas')">Grasas Lubricantes</a></li>
+                    <li><a href="#" onclick="showPage('aditivos')">Aditivos</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Marcas</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Mobil 1</a></li>
+                    <li><a href="#">Castrol</a></li>
+                    <li><a href="#">Shell</a></li>
+                    <li><a href="#">Valvoline</a></li>
+                    <li><a href="#">Total</a></li>
+                </ul>
+            </div>
+			
+            <div class="footer-col">
+    <h3>Métodos de Pago</h3>
+    <div class="payment-methods">
+        <div class="payment-item">
+            <img src="https://icon2.cleanpng.com/lnd/20241023/rs/dc7500afb8e99eec1f91b22386ec02.webp" alt="Visa">
+            <span>Visa</span>
+        </div>
+        <div class="payment-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/1200px-MasterCard_Logo.svg.png" alt="Mastercard">
+            <span>Mastercard</span>
+        </div>
+        <div class="payment-item">
+            <img src="https://res.cloudinary.com/helpmycash/image/upload/c_fill,w_1280,q_auto,f_auto/media/ebqn7uybzul8ydptd2pt" alt="PayPal">
+            <span>PayPal</span>
+        </div>
+    </div>
+</div>
+            
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Calzada Roosevelt 25-65, Zona 11, Ciudad de Guatemala</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <span><a href="tel:+50200120021">+502 00120021</a></span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span><a href="mailto:info@lubrimaxgt.com">info@lubrimaxgt.com</a></span>
+                    </li>
+                    <li>
+                        <i class="fab fa-whatsapp"></i>
+                        <span><a href="https://wa.me/50200120021">+502 00120021</a></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 LubriMax GT. Todos los derechos reservados.</p>
+			<p>&copy; JL.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Global variables
+        let cart = [];
+        let currentPageBeforeDetail = 'inicio';
+        let currentProductId = '';
+        
+        // Function to show specific page and hide others
+        function showPage(pageId) {
+            // Guardar la página actual antes de cambiar (excepto para product-detail)
+            if (pageId !== 'product-detail') {
+                currentPageBeforeDetail = pageId;
+            }
+            
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update active link in sidebar
+            const sidebarLinks = document.querySelectorAll('.sidebar-menu li a');
+            sidebarLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('onclick') === `showPage('${pageId}')`) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Hide cart preview when navigating
+            hideCartPreview();
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Function to get product data
+        function getProductData(productId) {
+            let productData = {};
+            
+            switch(productId) {
+                case 'mobil1-5w30':
+                    productData = {
+                        id: 'mobil1-5w30',
+                        title: 'Aceite Sintético Mobil 1 5W-30',
+                        brand: 'Mobil 1',
+                        price: 'Q125.00',
+                        viscosity: '5W-30',
+                        size: '1 Litro',
+                        description: 'Aceite de motor totalmente sintético diseñado para proporcionar un rendimiento excepcional del motor y protección contra el desgaste. Formulado con tecnología avanzada para mantener el motor limpio y reducir la fricción. Ideal para vehículos modernos que requieren lubricantes de alta calidad.',
+                        image: 'https://m.media-amazon.com/images/I/61BIcUjiKkL._UF350,350_QL80_.jpg',
+                        thumbnails: [
+                            'https://m.media-amazon.com/images/I/61BIcUjiKkL._UF350,350_QL80_.jpg',
+                            'https://m.media-amazon.com/images/I/61xYEiIn90L._AC_SY450_.jpg',
+                            'https://m.media-amazon.com/images/I/71wjlNexWwL._AC_SY450_.jpg'
+                        ]
+                    };
+                    break;
+                case 'castrol-edge-5w30':
+                    productData = {
+                        id: 'castrol-edge-5w30',
+                        title: 'Aceite Sintético Castrol EDGE 5W-30',
+                        brand: 'Castrol',
+                        price: 'Q480.00',
+                        viscosity: '5W-30',
+                        size: '4 Litros',
+                        description: 'Tecnología Fluid TITANIUM que se adapta a las condiciones extremas del motor, reduciendo la fricción y mejorando el rendimiento. Protección superior contra el desgaste incluso en las condiciones de conducción más exigentes. Recomendado para motores de alto rendimiento.',
+                        image: 'https://ferreteriavidri.com/images/items/large/175003.jpg',
+                        thumbnails: [
+                            'https://ferreteriavidri.com/images/items/large/175003.jpg',
+                            'https://ferreteriavidri.com/images/items/large/175003_1.jpg',
+                            'https://ferreteriavidri.com/images/items/large/175003_2.jpg'
+                        ]
+                    };
+                    break;
+                case 'shell-helix-5w30':
+                    productData = {
+                        id: 'shell-helix-5w30',
+                        title: 'Aceite Shell Helix Ultra 5W-30',
+                        brand: 'Shell',
+                        price: 'Q550.00',
+                        viscosity: '5W-30',
+                        size: '5 Litros',
+                        description: 'Aceite totalmente sintético con tecnología PurePlus que ofrece una protección superior contra el desgaste y mantiene el motor limpio. Proporciona un rendimiento excepcional en condiciones extremas y ayuda a mejorar la eficiencia del combustible.',
+                        image: 'https://m.media-amazon.com/images/I/91FRpbCEwML._AC_SX679_.jpg',
+                        thumbnails: [
+                            'https://m.media-amazon.com/images/I/91FRpbCEwML._AC_SX679_.jpg',
+                            'https://m.media-amazon.com/images/I/91JCkL81U2L._AC_SX679_.jpg',
+                            'https://m.media-amazon.com/images/I/61DkC7E76fL._AC_SL1000_.jpg'
+                        ]
+                    };
+                    break;
+                case 'valvoline-premium-15w40':
+                    productData = {
+                        id: 'valvoline-premium-15w40',
+                        title: 'Aceite Valvoline Premium Blue 15W-40',
+                        brand: 'Valvoline',
+                        price: 'Q320.00',
+                        viscosity: '15W-40',
+                        size: '1 Galón',
+                        description: 'Aceite para motores diésel pesados que proporciona una protección excepcional contra el desgaste y el consumo de aceite. Formulado para soportar altas temperaturas y cargas pesadas. Ideal para vehículos comerciales y maquinaria pesada.',
+                        image: 'https://m.media-amazon.com/images/I/61p1MZ7H7IL._AC_SY550_.jpg',
+                        thumbnails: [
+                            'https://m.media-amazon.com/images/I/61p1MZ7H7IL._AC_SY550_.jpg',
+                            'https://m.media-amazon.com/images/I/713tJ7xy2oL._AC_SY550_.jpg',
+                            'https://m.media-amazon.com/images/I/71VDTXUpOjL._AC_SY550_.jpg'
+                        ]
+                    };
+                    break;
+                case 'mobil1-0w20':
+                    productData = {
+                        id: 'mobil1-0w20',
+                        title: 'Aceite Mobil 1 0W-20 Advanced Full Synthetic',
+                        brand: 'Mobil 1',
+                        price: 'Q690.00',
+                        viscosity: '0W-20',
+                        size: '5 Litros',
+                        description: 'Aceite de motor totalmente sintético con tecnología avanzada para máxima protección y rendimiento. Diseñado para vehículos modernos que requieren lubricantes de baja viscosidad para una mayor eficiencia de combustible.',
+                        image: 'https://m.media-amazon.com/images/I/61H+lGsQfbL._AC_SL1500_.jpg',
+                        thumbnails: [
+                            'https://m.media-amazon.com/images/I/61H+lGsQfbL._AC_SL1500_.jpg',
+                            'https://m.media-amazon.com/images/I/71wsCnxuL2L._AC_SL1500_.jpg',
+                            'https://m.media-amazon.com/images/I/613wtpl5u6L._AC_SL1500_.jpg'
+                        ]
+                    };
+                    break;
+                case 'castrol-magnatec-5w30':
+                    productData = {
+                        id: 'castrol-magnatec-5w30',
+                        title: 'Aceite Castrol MAGNATEC 5W-30',
+                        brand: 'Castrol',
+                        price: 'Q450.00',
+                        viscosity: '5W-30',
+                        size: '4 Litros',
+                        description: 'Protección inteligente que se adhiere a las partes críticas del motor para una lubricación instantánea al arranque. Reduce el desgaste del motor y proporciona una protección superior en todas las condiciones de conducción.',
+                        image: 'https://m.media-amazon.com/images/I/71Y0CAowaaL._AC_SX425_PIbundle-3,TopRight,0,0_SH20_.jpg',
+                        thumbnails: [
+                           'https://m.media-amazon.com/images/I/71T5toaezML._AC_SX425_.jpg',
+                            'https://m.media-amazon.com/images/I/81EHGn1xerL._AC_SX425_.jpg',
+                            'https://m.media-amazon.com/images/I/71Y0CAowaaL._AC_SX425_PIbundle-3,TopRight,0,0_SH20_.jpg'
+                        ]
+                    };
+                    break;
+                case 'mobil-atf-3309':
+                    productData = {
+                        id: 'mobil-atf-3309',
+                        title: 'Aceite para Transmisión Mobil ATF 3309',
+                        brand: 'Mobil',
+                        price: 'Q180.00',
+                        viscosity: 'ATF 3309',
+                        size: '1 Litro',
+                        description: 'Aceite para transmisiones automáticas que proporciona un rendimiento suave y protección contra el desgaste. Formulado para mantener la estabilidad de la viscosidad en un amplio rango de temperaturas. Compatible con varios modelos de vehículos.',
+                        image: 'https://m.media-amazon.com/images/I/71eI25kbpwL._AC_SX425_.jpg',
+                        thumbnails: [
+                            'https://m.media-amazon.com/images/I/71vBUpPW8nL._AC_SX425_.jpg',
+                            'https://m.media-amazon.com/images/I/81WGScCoGSL._AC_SX425_.jpg',
+                            'https://m.media-amazon.com/images/I/71Zg5DhPfjL._AC_SX425_.jpg'
+                        ]
+                    };
+                    break;
+                case 'castrol-transmax':
+                    productData = {
+                        id: 'castrol-transmax',
+                        title: 'Aceite para Transmisión Castrol Transmax',
+                        brand: 'Castrol',
+                        price: 'Q200.00',
+                        viscosity: 'Multi-Vehicle',
+                        size: '1 Litro',
+                        description: 'Protección superior para transmisiones automáticas en condiciones extremas de conducción. Proporciona cambios de marcha suaves y protección contra el desgaste. Compatible con una amplia gama de vehículos.',
+                        image: 'https://m.media-amazon.com/images/I/61h2QjHT98L._AC_SX425_.jpg',
+                        thumbnails: [
+                            'https://m.media-amazon.com/images/I/61h2QjHT98L._AC_SX425_.jpg',
+                            'https://m.media-amazon.com/images/I/61LbG0CpFaL._AC_SX425_.jpg',
+                            'https://m.media-amazon.com/images/I/619Buxnfi1L._AC_SX425_PIbundle-6,TopRight,0,0_SH20_.jpg'
+                        ]
+                    };
+                    break;
+                case 'valvoline-dot4':
+                    productData = {
+                        id: 'valvoline-dot4',
+                        title: 'Líquido para Frenos DOT 4',
+                        brand: 'Valvoline',
+                        price: 'Q95.00',
+                        viscosity: 'DOT 4',
+                        size: '500 ml',
+                        description: 'Alto punto de ebullición para un rendimiento confiable en condiciones de frenado exigentes. Protege contra la corrosión y el desgaste del sistema de frenos. Cumple con los estándares internacionales de calidad.',
+                        image: 'https://m.media-amazon.com/images/I/71L0ed1AHKL._AC_SY879_.jpg',
+                        thumbnails: [
+                             'https://m.media-amazon.com/images/I/51dc9AOazqL._AC_SX569_.jpg',
+                            'https://m.media-amazon.com/images/I/61MjKqcpXUL._AC_SX569_.jpg',
+                            'https://m.media-amazon.com/images/I/71L0ed1AHKL._AC_SY879_.jpg'
+                        ]
+                    };
+                    break;
+                case 'mobilgrease-xhp222':
+                    productData = {
+                        id: 'mobilgrease-xhp222',
+                        title: 'Grasa Mobilgrease XHP 222',
+                        brand: 'Mobil',
+                        price: 'Q150.00',
+                        viscosity: 'NLGI 2',
+                        size: '400 g',
+                        description: 'Grasa de litio complejo de alto rendimiento para aplicaciones industriales y automotrices. Proporciona protección contra el desgaste, la oxidación y la corrosión en condiciones extremas de carga y temperatura.',
+                        image: 'https://m.media-amazon.com/images/I/510ZHSfElsL._SX466_.jpg',
+                        thumbnails: [
+                            'https://m.media-amazon.com/images/I/510ZHSfElsL._SX466_.jpg',
+                        ]
+                    };
+                    break;
+                case 'liqui-moly-mos2':
+                    productData = {
+                        id: 'liqui-moly-mos2',
+                        title: 'Aditivo MoS2',
+                        brand: 'Liqui Moly',
+                        price: 'Q220.00',
+                        viscosity: '300 ml',
+                        size: 'Botella',
+                        description: 'Aditivo con partículas de molibdeno para reducir la fricción y el desgaste en el motor. Mejora la lubricación en condiciones de alta presión y temperatura. Compatible con todo tipo de aceites.',
+                        image: 'https://cdnx.jumpseller.com/ipacor/image/52736939/resize/470/645?1725726380',
+                        thumbnails: [
+                            'https://cdnx.jumpseller.com/ipacor/image/52736939/resize/470/645?1725726380',
+                            
+                        ]
+                    };
+                    break;
+                case 'mann-filter-w9142':
+                    productData = {
+                        id: 'mann-filter-w9142',
+                        title: 'Filtro de Aceite W 914/2',
+                        brand: 'Mann-Filter',
+                        price: 'Q120.00',
+                        viscosity: 'Universal',
+                        size: '1 Unidad',
+                        description: 'Filtro de aceite de alta calidad para diversos modelos de vehículos europeos. Proporciona una filtración eficiente para mantener el aceite limpio y proteger el motor contra partículas dañinas.',
+                        image: 'https://m.media-amazon.com/images/I/71YPzG8QsGL._AC_SY450_.jpg',
+                        thumbnails: [
+                            'https://m.media-amazon.com/images/I/71YPzG8QsGL._AC_SY450_.jpg',
+                            'https://m.media-amazon.com/images/I/51JIkuBsqBL._AC_SX425_.jpg',
+                            'https://m.media-amazon.com/images/I/71S-pVk2d-L._AC_SX569_.jpg'
+                        ]
+                    };
+                    break;
+                case 'prestone-antifreeze':
+                    productData = {
+                        id: 'prestone-antifreeze',
+                        title: 'Anticongelante/Refrigerante',
+                        brand: 'Prestone',
+                        price: 'Q180.00',
+                        viscosity: '50/50',
+                        size: '1 Galón',
+                        description: 'Protección todo el año para el sistema de enfriamiento de tu vehículo. Previene la corrosión y la formación de depósitos. Compatible con todos los metales y tipos de sellos.',
+                        image: 'https://m.media-amazon.com/images/I/71ya2qPU0CL._AC_SL1500_.jpg',
+                        thumbnails: [
+                            'https://m.media-amazon.com/images/I/71ya2qPU0CL._AC_SL1500_.jpg',
+                            'https://m.media-amazon.com/images/I/81eRbHMvTHL._AC_SX425_.jpg',
+                            'https://m.media-amazon.com/images/I/91+RlCOSThL._AC_SX425_.jpg'
+                        ]
+                    };
+                    break;
+                default:
+                    productData = {
+                        id: 'default',
+                        title: 'Producto no encontrado',
+                        brand: 'N/A',
+                        price: 'Q0.00',
+                        viscosity: 'N/A',
+                        size: 'N/A',
+                        description: 'Este producto no está disponible actualmente.',
+                        image: '',
+                        thumbnails: []
+                    };
+            }
+            
+            return productData;
+        }
+        
+        // Function to show product detail
+        function showProductDetail(productId) {
+            currentProductId = productId;
+            const productData = getProductData(productId);
+            
+            // Set product data in detail page
+            document.getElementById('main-product-image').src = productData.image;
+            document.getElementById('detail-product-title').textContent = productData.title;
+            document.getElementById('detail-product-brand').textContent = productData.brand;
+            document.getElementById('detail-product-price').textContent = productData.price;
+            document.getElementById('detail-product-viscosity').textContent = productData.viscosity;
+            document.getElementById('detail-product-size').textContent = productData.size;
+            document.getElementById('detail-product-description').textContent = productData.description;
+            
+            // Clear thumbnails
+            const thumbnailsContainer = document.querySelector('.product-thumbnails');
+            thumbnailsContainer.innerHTML = '';
+            
+            // Add thumbnails
+            productData.thumbnails.forEach(thumb => {
+                const thumbnail = document.createElement('div');
+                thumbnail.className = 'product-thumbnail';
+                thumbnail.innerHTML = `<img src="${thumb}" alt="Thumbnail">`;
+                thumbnail.addEventListener('click', () => {
+                    document.getElementById('main-product-image').src = thumb;
+                });
+                thumbnailsContainer.appendChild(thumbnail);
+            });
+            
+            // Show detail page
+            showPage('product-detail');
+        }
+        
+        // Function to add product to cart
+        function addToCart(productId) {
+            const productData = getProductData(productId);
+            
+            // Check if product already in cart
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: productId,
+                    title: productData.title,
+                    price: productData.price,
+                    image: productData.image,
+                    quantity: 1
+                });
+            }
+            
+            // Update cart count
+            updateCartCount();
+            
+            // Show notification
+            showNotification(`${productData.title} agregado al carrito`);
+        }
+        
+        // Function to add to cart from detail page
+        function addToCartFromDetail() {
+            const quantity = parseInt(document.getElementById('product-quantity').value);
+            const productData = getProductData(currentProductId);
+            
+            // Check if product already in cart
+            const existingItem = cart.find(item => item.id === currentProductId);
+            
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    id: currentProductId,
+                    title: productData.title,
+                    price: productData.price,
+                    image: productData.image,
+                    quantity: quantity
+                });
+            }
+            
+            // Update cart count
+            updateCartCount();
+            
+            // Show notification
+            showNotification(`${quantity} ${productData.title} agregado(s) al carrito`);
+            
+            // Go back to previous page
+            showPage(currentPageBeforeDetail);
+        }
+        
+        // Function to update cart count
+        function updateCartCount() {
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            document.querySelector('.cart-count').textContent = totalItems;
+            
+            // Update cart preview
+            updateCartPreview();
+        }
+        
+         // Function to update cart preview
+        function updateCartPreview() {
+    const cartItemsContainer = document.getElementById('cartItems');
+    cartItemsContainer.innerHTML = '';
+    
+    let total = 0;
+    
+    cart.forEach(item => {
+        // Elimina el 'Q' y convierte a número
+        const priceNumber = parseFloat(item.price.replace('Q', '').replace(',', ''));
+        const itemTotal = priceNumber * item.quantity;
+        total += itemTotal;
+        
+        const cartItem = document.createElement('div');
+        cartItem.className = 'cart-item';
+        cartItem.innerHTML = `
+            <div class="cart-item-img">
+                <img src="${item.image}" alt="${item.title}">
+            </div>
+            <div class="cart-item-info">
+                <div class="cart-item-title">${item.title}</div>
+                <div class="cart-item-price">${item.price}</div>
+                <div class="cart-item-quantity">
+                    <button onclick="updateCartItemQuantity('${item.id}', ${item.quantity - 1})">-</button>
+                    <input type="text" value="${item.quantity}" onchange="updateCartItemQuantity('${item.id}', this.value)">
+                    <button onclick="updateCartItemQuantity('${item.id}', ${item.quantity + 1})">+</button>
+                    <button class="remove-item" onclick="removeFromCart('${item.id}')"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+        `;
+        cartItemsContainer.appendChild(cartItem);
+    });
+    
+    // Formatea el total con comas cuando sea mayor a 1000
+    const formattedTotal = total >= 1000 ? 
+        'Q' + total.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") : 
+        'Q' + total.toFixed(2);
+    
+    document.getElementById('cartTotal').textContent = formattedTotal;
+    
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p>Tu carrito está vacío</p>';
+    }
+    }
+        
+        // Function to update cart item quantity
+        function updateCartItemQuantity(productId, newQuantity) {
+            newQuantity = parseInt(newQuantity);
+            
+            if (newQuantity < 1) {
+                // Remove item from cart if quantity is 0
+                cart = cart.filter(item => item.id !== productId);
+            } else {
+                // Update quantity
+                const item = cart.find(item => item.id === productId);
+                if (item) {
+                    item.quantity = newQuantity;
+                }
+            }
+            
+            // Update cart
+            updateCartCount();
+        }
+        
+        // Function to toggle cart preview
+        function toggleCartPreview() {
+            const cartPreview = document.getElementById('cartPreview');
+            cartPreview.classList.toggle('active');
+        }
+        
+        // Function to hide cart preview
+        function hideCartPreview() {
+            const cartPreview = document.getElementById('cartPreview');
+            cartPreview.classList.remove('active');
+        }
+        
+        // Function to show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            // Remove notification after 3 seconds
+            setTimeout(() => {
+                notification.classList.add('fade-out');
+                setTimeout(() => {
+                    notification.remove();
+                }, 500);
+            }, 3000);
+        }
+        
+        // Quantity functions for detail page
+        function increaseQuantity() {
+            const quantityInput = document.getElementById('product-quantity');
+            let quantity = parseInt(quantityInput.value);
+            quantityInput.value = quantity + 1;
+        }
+        
+        function decreaseQuantity() {
+            const quantityInput = document.getElementById('product-quantity');
+            let quantity = parseInt(quantityInput.value);
+            if (quantity > 1) {
+                quantityInput.value = quantity - 1;
+            }
+        }
+        
+		// Function to remove item from cart
+function removeFromCart(productId) {
+    cart = cart.filter(item => item.id !== productId);
+    updateCartCount();
+    showNotification('Producto eliminado del carrito');
+}
+
+// Function to clear entire cart
+function clearCart() {
+    if (cart.length > 0) {
+        cart = [];
+        updateCartCount();
+        showNotification('Carrito vaciado');
+    } else {
+        showNotification('El carrito ya está vacío');
+    }
+} 
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('inicio');
+        });
+		
+    </script>
+</body>
+</html>
